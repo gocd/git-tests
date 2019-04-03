@@ -1,0 +1,58 @@
+format_version: 3
+pipelines:
+  git-tests:
+    group: internal
+    label_template: ${COUNT}
+    lock_behavior: none
+    materials:
+      git:
+        git: https://github.com/akshaydewan/gocd
+        shallow_clone: true
+        auto_update: true
+        branch: shallow-submodules
+    stages:
+      - test:
+          fetch_materials: true
+          keep_artifacts: false
+          clean_workspace: false
+          approval:
+            type: manual
+          jobs:
+            <% versions.each do |git_version| %>
+            test-<%= git_version %>:
+              timeout: 0
+              elastic_profile_id: git-tests-profile
+              tasks:
+                - exec:
+                    arguments:
+                      - yum
+                      - remove
+                      - -y
+                      - rh-git29
+                    command: sudo
+                    run_if: passed
+                - exec:
+                    arguments:
+                      - rm
+                      - -rf
+                      - /opt/rh/rh-git29/
+                    command: sudo
+                    run_if: passed
+                - exec:
+                    arguments:
+                      - rpm
+                      - -i
+                      - /opt/git-rpm/git-<%= git_version %>-x86_64.rpm
+                    command: sudo
+                    run_if: passed
+                - exec:
+                    arguments:
+                      - --version
+                    command: git
+                    run_if: passed
+                - exec:
+                    command: ./gradlew
+                    arguments:
+                      - gitRelatedTests
+                    run_if: passed
+<% end %>
