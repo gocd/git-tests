@@ -1,7 +1,7 @@
 format_version: 3
 pipelines:
   git-tests:
-    group: gocd
+    group: go-cd
     label_template: ${COUNT}
     lock_behavior: none
     materials:
@@ -15,8 +15,6 @@ pipelines:
           fetch_materials: true
           keep_artifacts: false
           clean_workspace: false
-          approval:
-            type: manual
           jobs:
             <% versions.each do |git_version| %>
             test-<%= git_version %>:
