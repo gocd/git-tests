@@ -6,7 +6,7 @@ pipelines:
     lock_behavior: none
     materials:
       git:
-        git: https://github.com/akshaydewan/gocd
+        git: https://github.com/gocd/gocd
         shallow_clone: true
         auto_update: true
         branch: master

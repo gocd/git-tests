@@ -1,15 +1,15 @@
 format_version: 3
 pipelines:
   git-tests:
-    group: internal
+    group: gocd
     label_template: ${COUNT}
     lock_behavior: none
     materials:
       git:
-        git: https://github.com/akshaydewan/gocd
+        git: https://github.com/gocd/gocd
         shallow_clone: true
         auto_update: true
-        branch: shallow-submodules
+        branch: master
     stages:
       - test:
           fetch_materials: true
