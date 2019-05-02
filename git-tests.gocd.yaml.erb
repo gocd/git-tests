@@ -51,6 +51,10 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 <% end %>

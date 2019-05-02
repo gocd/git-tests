@@ -51,7 +51,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.20.1:
@@ -88,7 +92,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.19.2:
@@ -125,7 +133,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.18.1:
@@ -162,7 +174,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.17.2:
@@ -199,7 +215,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.16.5:
@@ -236,7 +256,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.15.3:
@@ -273,7 +297,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.14.5:
@@ -310,7 +338,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.13.7:
@@ -347,7 +379,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.12.5:
@@ -384,7 +420,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.11.4:
@@ -421,7 +461,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.10.5:
@@ -458,7 +502,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.9.5:
@@ -495,7 +543,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.8.6:
@@ -532,7 +584,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.7.6:
@@ -569,7 +625,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.6.7:
@@ -606,7 +666,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.5.6:
@@ -643,7 +707,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.4.9:
@@ -680,7 +748,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.3.9:
@@ -717,7 +789,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.2.3:
@@ -754,7 +830,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.1.4:
@@ -791,7 +871,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-2.0.5:
@@ -828,7 +912,11 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
             test-1.9.5:
@@ -865,6 +953,10 @@ pipelines:
                 - exec:
                     command: ./gradlew
                     arguments:
-                      - gitRelatedTests
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
                     run_if: passed
 
