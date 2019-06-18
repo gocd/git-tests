@@ -26,7 +26,7 @@ pipelines:
             
             test-2.22.0:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -69,7 +69,7 @@ pipelines:
 
             test-2.21.0:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -112,7 +112,7 @@ pipelines:
 
             test-2.20.1:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -155,7 +155,7 @@ pipelines:
 
             test-2.19.2:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -198,7 +198,7 @@ pipelines:
 
             test-2.18.1:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -241,7 +241,7 @@ pipelines:
 
             test-2.17.2:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -284,7 +284,7 @@ pipelines:
 
             test-2.16.5:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -327,7 +327,7 @@ pipelines:
 
             test-2.15.3:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -370,7 +370,7 @@ pipelines:
 
             test-2.14.5:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -413,7 +413,7 @@ pipelines:
 
             test-2.13.7:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -456,7 +456,7 @@ pipelines:
 
             test-2.12.5:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -499,7 +499,7 @@ pipelines:
 
             test-2.11.4:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -542,7 +542,7 @@ pipelines:
 
             test-2.10.5:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -585,7 +585,7 @@ pipelines:
 
             test-2.9.5:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -628,7 +628,7 @@ pipelines:
 
             test-2.8.6:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -671,7 +671,7 @@ pipelines:
 
             test-2.7.6:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -714,7 +714,7 @@ pipelines:
 
             test-2.6.7:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -757,7 +757,7 @@ pipelines:
 
             test-2.5.6:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -800,7 +800,7 @@ pipelines:
 
             test-2.4.9:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -843,7 +843,7 @@ pipelines:
 
             test-2.3.9:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -886,7 +886,7 @@ pipelines:
 
             test-2.2.3:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -929,7 +929,7 @@ pipelines:
 
             test-2.1.4:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -972,7 +972,7 @@ pipelines:
 
             test-2.0.5:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
@@ -1015,7 +1015,7 @@ pipelines:
 
             test-1.9.5:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:

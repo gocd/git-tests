@@ -26,7 +26,7 @@ pipelines:
             <% versions.each do |git_version| %>
             test-<%= git_version %>:
               timeout: 0
-              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
+              elastic_profile_id: ecs-gocd-OOM-tests-centos7
               tasks:
                 - exec:
                     arguments:
