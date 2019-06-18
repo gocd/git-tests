@@ -10,6 +10,11 @@ pipelines:
         shallow_clone: true
         auto_update: true
         branch: master
+      rpms:
+        git: https://github.com/gocd/git-tests
+        auto_update: true
+        branch: master
+        destination: git-tests
     stages:
       - test:
           fetch_materials: true
@@ -19,7 +24,7 @@ pipelines:
             
             test-2.22.0:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -40,9 +45,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.22.0-x86_64.rpm
+                      - git-2.22.0-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -57,10 +63,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.21.0:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -81,9 +88,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.21.0-x86_64.rpm
+                      - git-2.21.0-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -98,10 +106,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.20.1:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -122,9 +131,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.20.1-x86_64.rpm
+                      - git-2.20.1-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -139,10 +149,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.19.2:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -163,9 +174,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.19.2-x86_64.rpm
+                      - git-2.19.2-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -180,10 +192,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.18.1:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -204,9 +217,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.18.1-x86_64.rpm
+                      - git-2.18.1-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -221,10 +235,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.17.2:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -245,9 +260,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.17.2-x86_64.rpm
+                      - git-2.17.2-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -262,10 +278,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.16.5:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -286,9 +303,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.16.5-x86_64.rpm
+                      - git-2.16.5-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -303,10 +321,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.15.3:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -327,9 +346,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.15.3-x86_64.rpm
+                      - git-2.15.3-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -344,10 +364,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.14.5:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -368,9 +389,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.14.5-x86_64.rpm
+                      - git-2.14.5-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -385,10 +407,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.13.7:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -409,9 +432,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.13.7-x86_64.rpm
+                      - git-2.13.7-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -426,10 +450,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.12.5:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -450,9 +475,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.12.5-x86_64.rpm
+                      - git-2.12.5-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -467,10 +493,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.11.4:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -491,9 +518,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.11.4-x86_64.rpm
+                      - git-2.11.4-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -508,10 +536,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.10.5:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -532,9 +561,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.10.5-x86_64.rpm
+                      - git-2.10.5-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -549,10 +579,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.9.5:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -573,9 +604,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.9.5-x86_64.rpm
+                      - git-2.9.5-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -590,10 +622,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.8.6:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -614,9 +647,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.8.6-x86_64.rpm
+                      - git-2.8.6-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -631,10 +665,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.7.6:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -655,9 +690,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.7.6-x86_64.rpm
+                      - git-2.7.6-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -672,10 +708,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.6.7:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -696,9 +733,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.6.7-x86_64.rpm
+                      - git-2.6.7-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -713,10 +751,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.5.6:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -737,9 +776,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.5.6-x86_64.rpm
+                      - git-2.5.6-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -754,10 +794,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.4.9:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -778,9 +819,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.4.9-x86_64.rpm
+                      - git-2.4.9-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -795,10 +837,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.3.9:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -819,9 +862,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.3.9-x86_64.rpm
+                      - git-2.3.9-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -836,10 +880,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.2.3:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -860,9 +905,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.2.3-x86_64.rpm
+                      - git-2.2.3-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -877,10 +923,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.1.4:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -901,9 +948,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.1.4-x86_64.rpm
+                      - git-2.1.4-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -918,10 +966,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-2.0.5:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -942,9 +991,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-2.0.5-x86_64.rpm
+                      - git-2.0.5-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -959,10 +1009,11 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 
             test-1.9.5:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -983,9 +1034,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-1.9.5-x86_64.rpm
+                      - git-1.9.5-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -1000,4 +1052,5 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 

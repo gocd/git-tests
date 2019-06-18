@@ -10,6 +10,11 @@ pipelines:
         shallow_clone: true
         auto_update: true
         branch: master
+      rpms:
+        git: https://github.com/gocd/git-tests
+        auto_update: true
+        branch: master
+        destination: git-tests
     stages:
       - test:
           fetch_materials: true
@@ -19,7 +24,7 @@ pipelines:
             <% versions.each do |git_version| %>
             test-<%= git_version %>:
               timeout: 0
-              elastic_profile_id: git-tests-profile
+              elastic_profile_id: ecs-gocd-dev-build-highmem-centos-6
               tasks:
                 - exec:
                     arguments:
@@ -40,9 +45,10 @@ pipelines:
                     arguments:
                       - rpm
                       - -i
-                      - /opt/git-rpm/git-<%= git_version %>-x86_64.rpm
+                      - git-<%= git_version %>-x86_64.rpm
                     command: sudo
                     run_if: passed
+                    working_directory: git-tests/rpms
                 - exec:
                     arguments:
                       - --version
@@ -57,4 +63,5 @@ pipelines:
                       - "*Git*Test"
                       - -PallowTestsToBeSkipped=true
                     run_if: passed
+                    working_directory: gocd
 <% end %>
