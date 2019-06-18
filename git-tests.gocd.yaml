@@ -17,6 +17,47 @@ pipelines:
           clean_workspace: false
           jobs:
             
+            test-2.22.0:
+              timeout: 0
+              elastic_profile_id: git-tests-profile
+              tasks:
+                - exec:
+                    arguments:
+                      - yum
+                      - remove
+                      - -y
+                      - rh-git29
+                    command: sudo
+                    run_if: passed
+                - exec:
+                    arguments:
+                      - rm
+                      - -rf
+                      - /opt/rh/rh-git29/
+                    command: sudo
+                    run_if: passed
+                - exec:
+                    arguments:
+                      - rpm
+                      - -i
+                      - /opt/git-rpm/git-2.22.0-x86_64.rpm
+                    command: sudo
+                    run_if: passed
+                - exec:
+                    arguments:
+                      - --version
+                    command: git
+                    run_if: passed
+                - exec:
+                    command: ./gradlew
+                    arguments:
+                      - :domain:test
+                      - :common:test
+                      - --tests
+                      - "*Git*Test"
+                      - -PallowTestsToBeSkipped=true
+                    run_if: passed
+
             test-2.21.0:
               timeout: 0
               elastic_profile_id: git-tests-profile
