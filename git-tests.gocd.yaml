@@ -10,6 +10,7 @@ pipelines:
         shallow_clone: true
         auto_update: true
         branch: master
+        destination: gocd
       rpms:
         git: https://github.com/gocd/git-tests
         auto_update: true
