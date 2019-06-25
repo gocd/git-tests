@@ -10,6 +10,7 @@ pipelines:
         blacklist:
           - '**/*'
         name: gocd
+        destination: gocd
       rpms:
         git: https://github.com/gocd/git-tests
         shallow_clone: true
