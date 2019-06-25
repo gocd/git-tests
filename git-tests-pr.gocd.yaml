@@ -18,11 +18,11 @@ pipelines:
         branch: master
         destination: git-tests
     stages:
-      approval: manual
       - test:
           fetch_materials: true
           keep_artifacts: false
           clean_workspace: false
+          approval: manual
           jobs:
 
             test-2.22.0:
