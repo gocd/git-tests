@@ -18,6 +18,7 @@ pipelines:
         branch: master
         destination: git-tests
     stages:
+      approval: manual
       - test:
           fetch_materials: true
           keep_artifacts: false
