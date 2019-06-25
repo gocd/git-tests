@@ -1,6 +1,6 @@
 format_version: 3
 pipelines:
-  git-tests:
+  git-tests-PR:
     group: go-cd-PR
     label_template: ${COUNT}
     lock_behavior: none
