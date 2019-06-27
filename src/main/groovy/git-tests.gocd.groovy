@@ -43,7 +43,7 @@ versions.each { version -> gitTestJobs.add(gitTestJob(version)) }
 
 GoCD.script {
     pipelines {
-        pipeline("git-tests-pr") {
+        pipeline("git-tests") {
             group = "go-cd"
             materials {
                 git {
