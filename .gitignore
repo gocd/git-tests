@@ -1,4 +1,13 @@
-.idea
 out
 *.swp
 *.swo
+
+# intellij
+.idea/
+!.idea/copyright/
+!.idea/codeStyleSettings.xml
+!.idea/jsLinters/eslint.xml
+bin/
+*.iml
+
+.gradle/

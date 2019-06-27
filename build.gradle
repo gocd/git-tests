@@ -1,0 +1,11 @@
+plugins {
+    id 'groovy'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly group: 'com.github.ketan', name: 'dsl', version: '0.7.4-60'
+}
