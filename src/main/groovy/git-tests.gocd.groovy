@@ -18,10 +18,10 @@ private static Job gitTestJob(String git_version) {
         elasticProfileId = "ecs-gocd-OOM-tests-centos7"
         tasks {
             exec {
-                commandLine = ['sudo', 'yum', 'remove', '-y', 'rh-git29']
+                commandLine = ['sudo', 'yum', 'remove', '-y', 'sclo-git212']
             }
             exec {
-                commandLine = ['sudo', 'rm', '-rf', '/opt/rh/rh-git29/']
+                commandLine = ['sudo', 'rm', '-rf', '/opt/rh/sclo-git*', "/etc/profile.d/sclo-git*.sh"]
             }
             exec {
                 commandLine = ['sudo', 'rpm', '-i', "git-${git_version}-x86_64.rpm"]
