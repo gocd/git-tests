@@ -15,7 +15,7 @@ def rpmMaterial = new GitMaterial("rpms", {
 
 private static Job gitTestJob(String git_version) {
     new Job("test-${git_version}", {
-        elasticProfileId = "ecs-gocd-OOM-tests-centos7"
+        elasticProfileId = "ecs-gocd-OOM-tests-centos"
         tasks {
             exec {
                 commandLine = ['sudo', 'yum', 'remove', '-y', 'rh-git29', 'sclo-git212']
