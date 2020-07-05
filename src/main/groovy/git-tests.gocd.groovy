@@ -18,10 +18,16 @@ private static Job gitTestJob(String git_version) {
         elasticProfileId = "ecs-gocd-OOM-tests-centos"
         tasks {
             exec {
-                commandLine = ['sudo', 'yum', 'remove', '-y', 'rh-git29', 'sclo-git212']
+                commandLine = ['sudo', 'dnf', 'remove', '-y', 'rh-git29', 'sclo-git212']
             }
             exec {
                 commandLine = ['sudo', 'rm', '-rf', '/opt/rh/sclo-git*', "/etc/profile.d/sclo-git*.sh", '/opt/rh/rh-git*', "/etc/profile.d/rh-git*.sh"]
+            }
+            if (git_version.matches(~/^2\.2\d+\.\d+/)) {
+                exec {
+                    commandLine = ['sudo', 'dnf', '-y', 'install', 'compat-openssl10']
+                    workingDir = "git-tests/rpms"
+                }
             }
             exec {
                 commandLine = ['sudo', 'rpm', '-i', "git-${git_version}-x86_64.rpm"]
