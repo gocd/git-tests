@@ -21,10 +21,11 @@ private static Job gitTestJob(String git_version) {
                 commandLine = ['bash', '-c', '''PKG=dnf
                 |if ! command -v dnf; then
                 |  PKG=yum
+                |else
+                |  sudo $PKG -y install compat-openssl10
                 |fi
                 |sudo $PKG -y remove rh-git29 sclo-git212
                 |sudo rm -rf /opt/rh/sclo-git* /etc/profile.d/sclo-git*.sh /opt/rh/rh-git* /etc/profile.d/rh-git*.sh
-                |sudo $PKG -y install compat-openssl10
                 |'''.stripMargin()]
             }
             exec {
