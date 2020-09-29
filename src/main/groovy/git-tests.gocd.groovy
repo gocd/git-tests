@@ -71,27 +71,5 @@ GoCD.script {
                 })
             }
         }
-        pipeline("git-tests-pr") {
-            group = "go-cd-PR"
-            materials {
-                pluggable {
-                    name = "gocd"
-                    destination = "gocd"
-                    scm = "c0758880-10f7-4f38-a0b0-f3dc31e5d907"
-                    blacklist = ['**/*']
-                }
-                add(rpmMaterial)
-            }
-            stages {
-                stage("test", {
-                    fetchMaterials = true
-                    cleanWorkingDir = false
-                    approval { "manual" }
-                    jobs {
-                        addAll(gitTestJobs)
-                    }
-                })
-            }
-        }
     }
 }
