@@ -15,17 +15,11 @@ def rpmMaterial = new GitMaterial("rpms", {
 
 private static Job gitTestJob(String git_version) {
     new Job("test-${git_version}", {
-        elasticProfileId = "ecs-gocd-OOM-tests-centos"
+        elasticProfileId = "ecs-gocd-dev-build"
         tasks {
             exec {
                 commandLine = ['bash', '-c', '''PKG=dnf
-                |if ! command -v dnf; then
-                |  PKG=yum
-                |else
-                |  sudo $PKG -y install compat-openssl10
-                |fi
-                |sudo $PKG -y remove rh-git29 sclo-git212
-                |sudo rm -rf /opt/rh/sclo-git* /etc/profile.d/sclo-git*.sh /opt/rh/rh-git* /etc/profile.d/rh-git*.sh
+                |sudo $PKG -y remove git
                 |'''.stripMargin()]
             }
             exec {
@@ -49,7 +43,7 @@ versions.each { version -> gitTestJobs.add(gitTestJob(version)) }
 GoCD.script {
     pipelines {
         pipeline("git-tests") {
-            group = "go-cd"
+            group = "internal"
             materials {
                 git {
                     name = "gocd"
