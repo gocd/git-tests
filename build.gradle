@@ -7,6 +7,6 @@ repositories {
 }
 
 dependencies {
-    compileOnly group: 'cd.go.groovydsl', name: 'dsl', version: '1.0.3-150'
+    compileOnly "group: 'cd.go.groovydsl:dsl:2.1.1-416"
     implementation(localGroovy())
 }
