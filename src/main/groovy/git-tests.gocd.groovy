@@ -8,7 +8,7 @@ final def versions = [
 ]
 
 def rpmMaterial = new GitMaterial("rpms", {
-    url = "https://github.com/gocd/git-tests"
+    url = "https://git.gocd.io/git/gocd/git-tests"
     shallowClone = true
     autoUpdate = true
     branch = "master"
@@ -49,7 +49,7 @@ GoCD.script {
             materials {
                 git {
                     name = "gocd"
-                    url = 'https://github.com/gocd/gocd'
+                    url = 'https://git.gocd.io/git/gocd/gocd'
                     shallowClone = true
                     autoUpdate = true
                     branch = "master"
